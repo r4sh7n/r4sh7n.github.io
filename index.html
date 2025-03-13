@@ -27,10 +27,20 @@
             color: #00ccff;
         }
         a:hover {
-            color: #ff00ff;
+            color: #8a2be2; /* Electric Purple */
         }
 
-        /* Header with Vanta.js Background */
+        /* Vanta.js Background */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header */
         header {
             height: 100vh;
             display: flex;
@@ -61,8 +71,8 @@
             transition: 0.3s;
         }
         header a:hover {
-            background: #ff00ff;
-            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            background: #8a2be2; /* Electric Purple */
+            box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
         }
 
         /* Navigation Bar */
@@ -95,6 +105,8 @@
             margin: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 204, 255, 0.1);
+            position: relative;
+            z-index: 1;
         }
         h2 {
             color: #00ccff;
@@ -138,12 +150,12 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 15px;
             border-radius: 10px;
-            border: 1px solid #ff00ff;
+            border: 1px solid #8a2be2; /* Electric Purple */
             transition: 0.3s;
         }
         .osint-tool:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 20px #ff00ff;
+            box-shadow: 0 0 20px #8a2be2; /* Electric Purple */
         }
 
         /* Contact Section */
@@ -166,8 +178,8 @@
             transition: 0.3s;
         }
         .contact-icons a:hover {
-            background: #ff00ff;
-            box-shadow: 0 0 10px #ff00ff;
+            background: #8a2be2; /* Electric Purple */
+            box-shadow: 0 0 10px #8a2be2; /* Electric Purple */
         }
 
         /* Footer */
@@ -176,6 +188,8 @@
             background: rgba(0, 0, 0, 0.9);
             color: #b3b3b3;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         .social-links {
             margin-top: 10px;
@@ -188,13 +202,6 @@
         }
         .social-links a:hover {
             color: #00ccff;
-        }
-
-        /* Animations */
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px #00ccff; }
-            50% { box-shadow: 0 0 20px #00ccff; }
-            100% { box-shadow: 0 0 5px #00ccff; }
         }
     </style>
 </head>
