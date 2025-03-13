@@ -51,15 +51,18 @@
             color: #00ccff;
             padding: 20px;
             position: relative;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
             font-size: 4rem;
             margin: 0;
             text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+            animation: slideIn 1.5s ease-in-out;
         }
         header p {
             font-size: 1.5rem;
             margin: 10px 0;
+            animation: slideIn 2s ease-in-out;
         }
         header a {
             color: white;
@@ -69,6 +72,7 @@
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
+            animation: fadeIn 2.5s ease-in-out;
         }
         header a:hover {
             background: #8a2be2; /* Electric Purple */
@@ -84,6 +88,7 @@
             padding: 10px 0;
             text-align: center;
             z-index: 1000;
+            animation: slideDown 1s ease-in-out;
         }
         nav a {
             color: white;
@@ -107,6 +112,13 @@
             box-shadow: 0 0 20px rgba(0, 204, 255, 0.1);
             position: relative;
             z-index: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        section.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
         h2 {
             color: #00ccff;
@@ -128,6 +140,13 @@
             border-radius: 10px;
             border: 1px solid #00ccff;
             transition: 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .skill-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
         .skill-card:hover {
             transform: translateY(-10px);
@@ -152,6 +171,13 @@
             border-radius: 10px;
             border: 1px solid #8a2be2; /* Electric Purple */
             transition: 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .osint-tool.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
         .osint-tool:hover {
             transform: translateY(-10px);
@@ -202,6 +228,20 @@
         }
         .social-links a:hover {
             color: #00ccff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
     </style>
 </head>
@@ -324,6 +364,23 @@
         backSpeed: 30,
         loop: true,
     });
+
+    // Scroll Animations
+    const sections = document.querySelectorAll('section');
+    const skillCards = document.querySelectorAll('.skill-card');
+    const osintTools = document.querySelectorAll('.osint-tool');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach((section) => observer.observe(section));
+    skillCards.forEach((card) => observer.observe(card));
+    osintTools.forEach((tool) => observer.observe(tool));
 </script>
 
 </body>
