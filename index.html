@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Portfolio - Roshan Choudhary</title>
+    <meta name="description" content="Cybersecurity Portfolio of Roshan Choudhary - Specializing in Penetration Testing, Web3 Security, and OSINT.">
+    <meta name="keywords" content="Cybersecurity, Pentesting, Web3 Security, OSINT, Roshan Choudhary">
+    <meta name="author" content="Roshan Choudhary">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
@@ -27,7 +30,7 @@
             color: #00ccff;
         }
         a:hover {
-            color: #8a2be2; /* Electric Purple */
+            color: #8a2be2;
         }
 
         /* Vanta.js Background */
@@ -75,7 +78,7 @@
             animation: fadeIn 2.5s ease-in-out;
         }
         header a:hover {
-            background: #8a2be2; /* Electric Purple */
+            background: #8a2be2;
             box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
         }
 
@@ -169,7 +172,7 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 15px;
             border-radius: 10px;
-            border: 1px solid #8a2be2; /* Electric Purple */
+            border: 1px solid #8a2be2;
             transition: 0.3s;
             opacity: 0;
             transform: translateY(50px);
@@ -181,7 +184,7 @@
         }
         .osint-tool:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 20px #8a2be2; /* Electric Purple */
+            box-shadow: 0 0 20px #8a2be2;
         }
 
         /* Contact Section */
@@ -202,11 +205,18 @@
             font-size: 24px;
             border-radius: 10px;
             transition: 0.3s;
+            animation: float 3s ease-in-out infinite;
         }
         .contact-icons a:hover {
-            background: #8a2be2; /* Electric Purple */
-            box-shadow: 0 0 10px #8a2be2; /* Electric Purple */
+            background: #8a2be2;
+            box-shadow: 0 0 10px #8a2be2;
+            animation: none; /* Stop floating on hover */
         }
+        .contact-icons a:nth-child(1) { animation-delay: 0s; }
+        .contact-icons a:nth-child(2) { animation-delay: 0.5s; }
+        .contact-icons a:nth-child(3) { animation-delay: 1s; }
+        .contact-icons a:nth-child(4) { animation-delay: 1.5s; }
+        .contact-icons a:nth-child(5) { animation-delay: 2s; }
 
         /* Footer */
         footer {
@@ -242,6 +252,28 @@
         @keyframes slideDown {
             from { transform: translateY(-100%); }
             to { transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .contact-icons a {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -330,10 +362,11 @@
 <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact-icons">
-        <a href="mailto:choudharyroshan473@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/r4sh7n" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/r4sh7n" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/r4sh7n_" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:choudharyroshan473@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/r4sh7n" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/r4sh7n/" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/r4sh7n_" target="_blank" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/r4sh7n_" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 </section>
 
@@ -343,6 +376,7 @@
         <a href="https://github.com/r4sh7n" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/r4sh7n" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://x.com/r4sh7n_" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/r4sh7n_" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 </footer>
 
